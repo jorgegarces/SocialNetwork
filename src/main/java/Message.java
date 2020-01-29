@@ -11,16 +11,21 @@ public class Message implements Comparable<Message>{
         this.date = date;
     }
 
+    private String elapsedTime() {
+        long elapsed = (new Date().getTime() - date.getTime()) / 1000;
+
+        if (elapsed < 60) return elapsed + " seconds ago)";
+        return Math.abs(elapsed / 60) + " min ago)";
+    }
+
     @Override
     public String
     toString() {
-        return user.toString() + " - " + message + " (" + date.getTime() +")";
+        return user.toString() + " - " + message + " (" + elapsedTime();
     }
 
     @Override
     public int compareTo(Message message) {
-        if (this.date.getTime() > message.date.getTime()) return 1;
-        if (this.date.getTime() == message.date.getTime()) return 0;
-        return -1;
+        return Long.compare(this.date.getTime(), message.date.getTime());
     }
 }

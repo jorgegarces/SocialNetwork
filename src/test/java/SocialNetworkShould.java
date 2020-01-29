@@ -66,7 +66,6 @@ public class SocialNetworkShould {
 
         Date testDate;
 
-
         User testUser = new User("Felipe");
         socialNetwork.addUser(testUser);
         testDate = new Date();

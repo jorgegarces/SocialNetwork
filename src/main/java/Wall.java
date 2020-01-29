@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Wall {
+public class Wall implements Iterable<Message>{
 
     public List<Message> messageList = new ArrayList<Message>();
 
@@ -9,7 +9,6 @@ public class Wall {
 
     public Wall aggregateTimeLines(List<TimeLine> timeLines) {
         sortMessagesByDate(timeLines);
-        System.out.println(this);
         return this;
     }
 
@@ -38,5 +37,10 @@ public class Wall {
     @Override
     public int hashCode() {
         return Objects.hash(messageList);
+    }
+
+    @Override
+    public Iterator<Message> iterator() {
+        return messageList.iterator();
     }
 }
