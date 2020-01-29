@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SocialNetworkShould" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-11T20:57:13" hostname="admins-mbp.home" time="0.003">
+<testsuite name="SocialNetworkShould" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-01-29T09:52:29" hostname="admins-MBP.office" time="0.013">
   <properties/>
-  <testcase name="test" classname="SocialNetworkShould" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="add_message_to_user_timeline" classname="SocialNetworkShould" time="0.005"/>
+  <testcase name="add_new_user_to_user_registry" classname="SocialNetworkShould" time="0.0"/>
+  <testcase name="aggregate_friends_timeline_to_own" classname="SocialNetworkShould" time="0.005"/>
+  <testcase name="add_friend_to_user_friends_list" classname="SocialNetworkShould" time="0.001"/>
+  <system-out><![CDATA[[Felipe - Buenas tardes (1580291549487), Lolo - Buenos días (1580291549489)]
+[Felipe - Buenas tardes (1580291549487), Lolo - Buenos días (1580291549489)]
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
