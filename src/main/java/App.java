@@ -8,7 +8,7 @@ public class App {
             System.out.println("Social Network, enter your command");
             Scanner in = new Scanner(System.in);
             String input = in.nextLine();
-            socialNetwork = new SocialNetwork();
+            socialNetwork = new SocialNetwork(input);
         }
     }
 }
