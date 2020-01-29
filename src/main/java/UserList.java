@@ -1,8 +1,9 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
-public class UserList {
+public class UserList implements Iterable<User> {
 
     private Set<User> userList = new HashSet<User>();
 
@@ -24,5 +25,10 @@ public class UserList {
         if (o == null || getClass() != o.getClass()) return false;
         UserList userList1 = (UserList) o;
         return Objects.equals(userList, userList1.userList);
+    }
+
+    @Override
+    public Iterator<User> iterator() {
+        return userList.iterator();
     }
 }

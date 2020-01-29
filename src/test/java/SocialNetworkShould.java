@@ -9,7 +9,7 @@ public class SocialNetworkShould {
     @Test
     public void add_new_user_to_user_registry() {
 
-        SocialNetwork socialNetwork = new SocialNetwork("");
+        SocialNetwork socialNetwork = new SocialNetwork();
 
         User testUser = new User("Felipe");
         socialNetwork.addUser(testUser);
@@ -23,7 +23,7 @@ public class SocialNetworkShould {
     @Test
     public void add_friend_to_user_friends_list() {
 
-        SocialNetwork socialNetwork = new SocialNetwork("");
+        SocialNetwork socialNetwork = new SocialNetwork();
 
         User testUser = new User("Felipe");
         socialNetwork.addUser(testUser);
@@ -43,7 +43,7 @@ public class SocialNetworkShould {
     @Test
     public void add_message_to_user_timeline() {
 
-        SocialNetwork socialNetwork = new SocialNetwork("");
+        SocialNetwork socialNetwork = new SocialNetwork();
 
         User testUser = new User("Felipe");
         socialNetwork.addUser(testUser);
@@ -62,7 +62,7 @@ public class SocialNetworkShould {
 
     @Test
     public void aggregate_friends_timeline_to_own() {
-        SocialNetwork socialNetwork = new SocialNetwork("");
+        SocialNetwork socialNetwork = new SocialNetwork();
 
         Date testDate;
 
