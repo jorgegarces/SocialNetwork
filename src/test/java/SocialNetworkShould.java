@@ -50,7 +50,7 @@ public class SocialNetworkShould {
 
         Date testDate = new Date();
 
-        Message testMessage = new Message(testUser, "Buenas tardes", testDate);
+        Message testMessage = new Message(testUser, "Buenas tardes");
         testUser.addMessage(testMessage);
 
         TimeLine expected = new TimeLine();
@@ -69,7 +69,7 @@ public class SocialNetworkShould {
         User testUser = new User("Felipe");
         socialNetwork.addUser(testUser);
         testDate = new Date();
-        Message testMessage = new Message(testUser, "Buenas tardes", testDate);
+        Message testMessage = new Message(testUser, "Buenas tardes");
         testUser.addMessage(testMessage);
 
         User testFriend = new User("Lolo");
@@ -77,7 +77,7 @@ public class SocialNetworkShould {
 
         testDate = new Date();
         testDate.setTime(testDate.getTime() + 2);
-        Message friendTestMessage = new Message(testFriend, "Buenos días", testDate);
+        Message friendTestMessage = new Message(testFriend, "Buenos días");
         testFriend.addMessage(friendTestMessage);
         testUser.addFriend(testFriend);
 

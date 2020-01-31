@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class SocialNetwork {
 
     private UserList userList;
@@ -18,27 +16,26 @@ public class SocialNetwork {
 
     public void parseInput(String input) {
         String[] parsedInput = input.split(" ");
-
         String userName = parsedInput[0].trim();
-        User user = userList.retrieveUser(userName);
+        User user = checkUser(userName);
 
-        if (parsedInput.length == 1) user.getTimeLine().forEach(System.out::println);
-        else if (parsedInput.length == 2) user.getWall().forEach(System.out::println);
-        else if (parsedInput[1].equals("follows")) {
+        if (input.contains("wall")) user.getWall().forEach(System.out::println);
+        else if (input.contains("follows")) {
             user.addFriend(userList.retrieveUser(parsedInput[2]));
             System.out.println("User added to followeds.");
-        } else {
-                if (user != null) {
-                    user.addMessage(new Message(user, parsedInput[2].trim(), new Date()));
-                    System.out.println(user.toString() + " posted a new message!");
-                } else {
-                    String userMessage = parsedInput[2].trim();
-                    user = new User(userName);
-                    this.addUser(user);
-                    Message message = new Message(user, userMessage, new Date());
-                    user.addMessage(message);
-                    System.out.println(user.toString() + " posted a new message!");
-                }
-            }
-        }
+        } else if (input.contains("->")) {
+            parsedInput = input.split("->");
+            user.addMessage(new Message(user, parsedInput[1].trim()));
+            System.out.println(user.toString() + " posted a new message!");
+        } else user.getTimeLine().forEach(System.out::println);
     }
+
+    private User checkUser(String userName) {
+        User user = userList.retrieveUser(userName);
+        if (user == null) {
+            user = new User(userName);
+            this.addUser(user);
+        }
+        return user;
+    }
+}

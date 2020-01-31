@@ -5,10 +5,10 @@ public class Message implements Comparable<Message>{
     private final Date date;
     private String message = "";
 
-    public Message(User user, String message, Date date) {
+    public Message(User user, String message) {
         this.user = user;
         this.message = message;
-        this.date = date;
+        this.date = new Date();
     }
 
     private String elapsedTime() {
