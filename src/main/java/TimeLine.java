@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class TimeLine implements Iterable<Message>{
-    List<Message> timeline = new ArrayList<Message>();
+    private List<Message> timeline = new ArrayList<Message>();
 
     public void newMessage(Message message) {
         timeline.add(message);

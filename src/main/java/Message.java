@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Objects;
 
 public class Message implements Comparable<Message>{
     private final User user;
